@@ -1,6 +1,6 @@
 
 class Solution:
-    def findRedundantConnection(self,edges:list[list[int]])->list[int]:
+    def finRedundantConnections(self,edges:list[list[int]])->list[int]:
         n = len(edges)
         parent = list(range(n + 1))
         def find(index:int)->int:
