@@ -26,8 +26,8 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution t;
     int a = t.romanToInt("IV");
-    printf("%d",a);
+    printf("%d", a);
 }

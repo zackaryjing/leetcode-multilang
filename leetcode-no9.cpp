@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-class Solution2 {
+class Solution3 {
 public:
     bool isPalindrome2(int x) {
         string k = to_string(x);
