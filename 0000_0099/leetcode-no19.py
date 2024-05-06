@@ -3,6 +3,7 @@ class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+        
 class Solution2(object):
     def removeNthFromEnd(self, head, n):
         """
@@ -26,6 +27,7 @@ class Solution2(object):
             return nodes[1]
         return t
 
+#include<bits/stdc++.h>
 
 class Solution(object):
     def removeNthFromEnd(self, head, n):

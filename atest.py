@@ -1,19 +1,22 @@
-# from itertools import product
-# a = ["1","2","3","20"]
-# b = ["i","g","r","at"]
-# print(list(product(a,b)))
-# h = "0"
-# print(h.startswith("0."))
+from pprint import pprint
+import numpy as np
 
-def isprime(num):
-    k = int(num ** 0.5) + 1
-    for i in range(2,k):
-        if num % i == 0:
-            return False
-    return True
+board = [[1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 0, 1, 1, ]]
+store = [[1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ],
+         [1, 1, 1, 1, 1, ]]
 
-print(isprime(99997))
-for i in range(100):
-    if isprime(i):
-        print(i)
-print(isprime(8))
+# 计算行方向上的最小值
+cum_sum = np.cumsum(board, axis=1)
+store = np.minimum(store, cum_sum)
+
+print(store)
+# 计算列方向上的最小值
+cum_sum = np.cumsum(board, axis=0)
+store = np.minimum(store, cum_sum[::-1])[::-1]

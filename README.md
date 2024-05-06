@@ -9,7 +9,7 @@ Heading for knight !
 - [X] 100 problems
 - [X] 200 problems
 - [X] 300 problems
-- [ ] 400 problems
+- [x] 400 problems
 - [ ] 500 problems
 - [ ] 600 problems
 - [ ] ... ...
