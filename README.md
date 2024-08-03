@@ -8,7 +8,7 @@ Wishing to rank higher in near future .
 - [x] 200
 - [x] 300
 - [x] 400 2023/7/10
-- [ ] 500
+- [x] 500 2024/8/3
 - [ ] ...
 
 
