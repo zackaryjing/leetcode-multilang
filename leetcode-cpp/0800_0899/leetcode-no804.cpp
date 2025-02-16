@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <set>
 #include <vector>
 
@@ -25,7 +26,7 @@ public:
 
 int main() {
     Solution test;
-    cout << test.uniqueMorseRepresentations(*new vector<string>({"gin", "zen", "gig", "msg"})) << endl;
+    cout << test.uniqueMorseRepresentations(*make_unique<vector<string>>({"gin", "zen", "gig", "msg"})) << endl;
 }
 
 //

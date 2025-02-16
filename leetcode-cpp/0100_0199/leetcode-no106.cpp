@@ -6,28 +6,28 @@
 using namespace std;
 
 //Definition for a binary tree node.
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
+struct MapNode {
+    int _val;
+    MapNode *left;
+    MapNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {
+    MapNode() : _val(0), left(nullptr), right(nullptr) {
     }
 
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {
+    MapNode(int x) : _val(x), left(nullptr), right(nullptr) {
     }
 
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {
+    MapNode(int x, MapNode *left, MapNode *right) : _val(x), left(left), right(right) {
     }
 };
 
 class Solution {
 public:
-    TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder) {
+    MapNode *buildTree(vector<int> &inorder, vector<int> &postorder) {
         return build(span<int>(inorder), span<int>(postorder));
     }
 
-    TreeNode *build(span<int> inorder, span<int> postorder) {
+    MapNode *build(span<int> inorder, span<int> postorder) {
         int root_val = postorder.back();
         int mid_index = 0;
         for (int i = 0; i < inorder.size(); i++) {
@@ -36,19 +36,19 @@ public:
                 break;
             }
         }
-        auto root = new TreeNode(root_val);
+        auto root = new MapNode(root_val);
 
         int right_cnt = inorder.size() - mid_index - 1;
         int left_cnt = mid_index;
 
         if (right_cnt == 1) {
-            root->right = new TreeNode(inorder[mid_index + 1]);
+            root->right = new MapNode(inorder[mid_index + 1]);
         } else if (right_cnt != 0) {
             root->right = build(inorder.subspan(mid_index + 1, right_cnt),
                                 postorder.subspan(postorder.size() - 1 - right_cnt, right_cnt));
         }
         if (left_cnt == 1) {
-            root->left = new TreeNode(inorder[0]);
+            root->left = new MapNode(inorder[0]);
         } else if (left_cnt != 0) {
             root->left = build(inorder.subspan(0, left_cnt), postorder.subspan(0, left_cnt));
         }
@@ -56,8 +56,8 @@ public:
     }
 };
 
-void dfs(TreeNode *root) {
-    cout << root->val << endl;
+void dfs(MapNode *root) {
+    cout << root->_val << endl;
     if (root->left) {
         dfs(root->left);
     }
