@@ -6,7 +6,7 @@ class Solution(object):
         """
         if x >= 0:
             t = int(str(abs(x))[::-1])
-            if t < 2147483648 :
+            if t < 2147483648:
                 return t
         else:
             t = -int(str(abs(x))[::-1])
