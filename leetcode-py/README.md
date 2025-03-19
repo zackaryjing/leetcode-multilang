@@ -10,12 +10,10 @@ Heading for knight !
 - [X] 200 problems
 - [X] 300 problems
 - [x] 400 problems
-- [ ] 500 problems
-- [ ] 600 problems
-- [ ] ... ...
+- [x] 500 problems
+- [x] 600 problems
+- [x] 700 problems (2025-03-19)
+- [ ] 800 problems
+- [ ] ...
 
-I really love coding , want to be strong.
-
-There's going to be tough two weeks.
-
-23/5/9
+Let's keep on moving!

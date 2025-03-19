@@ -1,7 +1,5 @@
-# problem:
+# problem: design-spreadsheet
 from typing import *
-
-from zmq.backend import first
 
 
 class Spreadsheet:

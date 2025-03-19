@@ -1,11 +1,11 @@
-// problem:
+// problem: unique-3-digit-even-numbers
 #include <iostream>
 #include <unordered_map>
 #include <vector>
 
 using namespace std;
 
-class Solution {
+class Solution { // 没注意到是选三个，所以搞错了，之后用python暴力处理了。
 public:
     int totalNumbers(vector<int> &digits) {
         unordered_map<int, int> cnts;
