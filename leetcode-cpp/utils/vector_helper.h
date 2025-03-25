@@ -19,7 +19,7 @@ void show_vector(vector<string> data) {
 }
 
 template<typename T>
-void show_matrix(vector<vector<T> > &data) {
+void show_matrix(vector<vector<T> > data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << to_string(h) << " ";
