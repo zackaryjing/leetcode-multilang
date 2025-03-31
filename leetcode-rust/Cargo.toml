@@ -1,0 +1,16 @@
+[package]
+name = "leetcode-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+#[[bin]]
+#name =
+
+[[bin]]
+name = "leetcode-no2109"
+path = "2100_2199/leetcode-no2109.rs"
+
+[[bin]]
+name = "leetcode-no2278"
+path = "2100_2199/leetcode-no2278.rs"
