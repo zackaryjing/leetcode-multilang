@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <vector>
 
 using namespace std;
@@ -29,6 +30,14 @@ void show_matrix(vector<vector<T> > data) {
     cout << endl;
 }
 
+template<typename T>
+vector<T> &temp_vector(vector<T> v) {
+    return *make_unique<vector<T> >(v);
+}
+
+vector<int> &temp_vector(vector<int> v) {
+    return *make_unique<vector<int> >(v);
+}
 
 //
 // Created by ASUS on 2025/2/10.
