@@ -17,7 +17,7 @@ public:
 int main() {
     const vector<Test> bar = {Test(1)};
     const vector<Test> &foo = bar;
-    const Test& kkk = foo.back();
+    const Test kkk = foo.back();
     kkk = Test();
 }
 

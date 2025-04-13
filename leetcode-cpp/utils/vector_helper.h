@@ -31,12 +31,10 @@ void show_matrix(vector<vector<T> > data) {
 }
 
 template<typename T>
-vector<T> &temp_vector(vector<T> v) {
-    return *make_unique<vector<T> >(v);
-}
-
-vector<int> &temp_vector(vector<int> v) {
-    return *make_unique<vector<int> >(v);
+std::vector<T> &temp_vector(std::vector<T> v) {
+    static std::vector<std::unique_ptr<std::vector<T> > > pool;
+    pool.emplace_back(std::make_unique<std::vector<T> >(std::move(v)));
+    return *pool.back();
 }
 
 //
