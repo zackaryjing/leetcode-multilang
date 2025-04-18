@@ -4,8 +4,16 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-#[[bin]]
-#name =
+
+[[bin]]
+name = "leetcode-no1030"
+path = "1000_1099/leetcode-no1030.rs"
+
+
+[[bin]]
+name = "leetcode-no1018"
+path = "1000_1099/leetcode-no1018.rs"
+
 [[bin]]
 name = "leetcode-no1922"
 path = "1900_1999/leetcode-no1922.rs"
