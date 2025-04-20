@@ -5,6 +5,34 @@ edition = "2024"
 
 [dependencies]
 
+
+[[bin]]
+name = "leetcode-no375"
+path = "0300_0399/leetcode-no375.rs"
+
+[[bin]]
+name = "leetcode-no1013"
+path = "1000_1099/leetcode-no1013.rs"
+
+
+[[bin]]
+name = "leetcode-no2563"
+path = "2500_2599/leetcode-no2563.rs"
+
+
+[[bin]]
+name = "leetcode-no1047"
+path = "1000_1099/leetcode-no1047.rs"
+
+
+[[bin]]
+name = "leetcode-no334"
+path = "0300_0399/leetcode-no334.rs"
+
+[[bin]]
+name = "leetcode-no2364"
+path = "2300_2399/leetcode-no2364.rs"
+
 [[bin]]
 name = "leetcode-no1030"
 path = "1000_1099/leetcode-no1030.rs"
