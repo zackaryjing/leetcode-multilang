@@ -6,6 +6,16 @@ edition = "2024"
 [dependencies]
 #[[bin]]
 #name =
+
+[[bin]]
+name = "leetcode-no2176"
+path = "2100_2199/leetcode-no2176.rs"
+
+[[bin]]
+name = "leetcode-no1534"
+path = "1500_1599/leetcode-no1534.rs"
+
+
 [[bin]]
 name = "leetcode-no1922"
 path = "1900_1999/leetcode-no1922.rs"
