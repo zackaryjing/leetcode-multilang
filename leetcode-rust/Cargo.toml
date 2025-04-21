@@ -4,6 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+utils = { path = "utils" }
+
+[[bin]]
+name = "leetcode-no2145"
+path = "2100_2199/leetcode-no2145.rs"
+
 
 [[bin]]
 name = "leetcode-no2176"
