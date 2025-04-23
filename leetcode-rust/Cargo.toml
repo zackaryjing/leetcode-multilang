@@ -7,6 +7,34 @@ edition = "2024"
 utils = { path = "utils" }
 
 [[bin]]
+name = "leetcode-no32"
+path = "0000_0100/leetcode-no32.rs"
+
+[[bin]]
+name = "leetcode-no1266"
+path = "1200_1299/leetcode-no1266.rs"
+
+[[bin]]
+name = "leetcode-no1078"
+path = "1000_1099/leetcode-no1078.rs"
+
+[[bin]]
+name = "leetcode-no1399"
+path = "1300_1399/leetcode-no1399.rs"
+
+[[bin]]
+name = "leetcode-no2338"
+path = "2300_2399/leetcode-no2338.rs"
+
+[[bin]]
+name = "leetcode-no859"
+path = "0800_0899/leetcode-no859.rs"
+
+[[bin]]
+name = "leetcode-no2197"
+path = "2100_2199/leetcode-no2179.rs"
+
+[[bin]]
 name = "leetcode-no2145"
 path = "2100_2199/leetcode-no2145.rs"
 
@@ -66,7 +94,7 @@ path = "2100_2199/leetcode-no2109.rs"
 
 [[bin]]
 name = "leetcode-no2278"
-path = "2100_2199/leetcode-no2278.rs"
+path = "2200_2299/leetcode-no2278.rs"
 
 [[bin]]
 name = "leetcode-no3396"
