@@ -1,24 +1,44 @@
 #include <iostream>
 #include <vector>
+#include "../utils/treegenerator.h"
+#include "../utils/vector_helper.h"
 
 using namespace std;
 
-class Test {
-public:
-    int val;
-
-    Test() = default;
-
-    explicit Test(int val): val(val) {
-    }
-};
-
 
 int main() {
-    const vector<Test> bar = {Test(1)};
-    const vector<Test> &foo = bar;
-    const Test kkk = foo.back();
-    kkk = Test();
+    int left = 0;
+    int right = 7;
+    vector<int> nums = {2, 1, 7, 1, 7, 1, 5};
+    int minK = 1;
+    int maxK = 7;
+    pair cnts = {0, 0};
+    int res = 0;
+
+
+    int start = left;
+    int end = left;
+    show_vector(nums);
+    cout << end << "<" << right << endl;
+    while (end < right) {
+        cout << "start: " << start << ", end: " << end << endl;
+        if (nums[end] == minK) {
+            cnts.first++;
+        } else if (nums[end] == maxK) {
+            cnts.second++;
+        }
+        while (cnts.first and cnts.second) {
+            cout << "\t start: " << start << ", end: " << end << endl;
+            res += right - end;
+            if (nums[start] == minK) {
+                cnts.first--;
+            } else if (nums[start] == maxK) {
+                cnts.second--;
+            }
+            start++;
+        }
+        end++;
+    }
 }
 
 

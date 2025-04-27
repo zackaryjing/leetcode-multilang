@@ -1,6 +1,6 @@
 // problem: https://leetcode.cn/problems/count-largest-group/?envType=daily-question&envId=2025-04-23
 struct Solution;
-use std::collections::{HashMap, hash_map};
+use std::collections::{HashMap};
 
 use std::cmp::max;
 impl Solution {
