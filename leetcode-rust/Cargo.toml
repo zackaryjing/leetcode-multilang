@@ -7,6 +7,26 @@ edition = "2024"
 utils = { path = "utils" }
 
 [[bin]]
+name = "recursive_test"
+path = "experiments/recursive_test.rs"
+
+[[bin]]
+name = "atest"
+path = "experiments/atest.rs"
+
+[[bin]]
+name = "test"
+path = "experiments/test.rs"
+
+[[bin]]
+name = "leetcode-no1846"
+path = "1800_1899/leetcode-no1849.rs"
+
+[[bin]]
+name = "leetcode-no2962"
+path = "2900_2999/leetcode-no2962.rs"
+
+[[bin]]
 name = "leetcode-no3342"
 path = "3300_3399/leetcode-no3342.rs"
 
