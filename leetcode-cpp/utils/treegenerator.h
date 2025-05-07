@@ -113,13 +113,13 @@ void prettyPrintTree(TreeNode* node, string prefix = "", bool isLeft = true) {
     }
 
     if(node->right) {
-        prettyPrintTree(node->right, prefix + (isLeft ? "©¦   " : "    "), false);
+        prettyPrintTree(node->right, prefix + (isLeft ? "â”‚   " : "    "), false);
     }
 
-    cout << prefix + (isLeft ? "©¸©¤©¤ " : "©°©¤©¤ ") + to_string(node->val) + "\n";
+    cout << prefix + (isLeft ? "â””â”€â”€ " : "â”Œâ”€â”€ ") + to_string(node->val) + "\n";
 
     if (node->left) {
-        prettyPrintTree(node->left, prefix + (isLeft ? "    " : "©¦   "), true);
+        prettyPrintTree(node->left, prefix + (isLeft ? "    " : "â”‚   "), true);
     }
 }
 
