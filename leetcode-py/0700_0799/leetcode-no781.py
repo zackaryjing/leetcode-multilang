@@ -1,3 +1,9 @@
+# problem: https://leetcode.cn/problems/rabbits-in-forest/?envType=daily-question&envId=2025-04-20
+from math import ceil
+from typing import *
+from collections import Counter
+
+
 class Solution2:
     def numRabbits(self, answers: list[int]) -> int:
         answers.sort()
@@ -22,7 +28,8 @@ class Solution2:
             total += i + 1
         return total
 
-class Solution:
+
+class Solution3:
     def numRabbits(self, answers: list[int]) -> int:
         answers.sort()
         current = -1
@@ -31,7 +38,7 @@ class Solution:
         del answers[:total]
         for i in answers:
             if i != current or times >= current + 1:
-                print(i,current,times)
+                # print(i, current, times)
                 total += i + 1
                 times = 1
                 current = i
@@ -42,14 +49,35 @@ class Solution:
         return total
 
 
+# 2025.4.20 reprogram
+class Solution:
+    def numRabbits(self, answers: list[int]) -> int:
+        counter = Counter(answers)
+        res = 0
+        for i, times in counter.items():
+            res += ceil(times / (i + 1)) * (i + 1)
+        return res
 
 
-t = Solution()
-print(t.numRabbits([1,1,2]))
-print(t.numRabbits([10,10,10]))
-print(t.numRabbits([1,0,1,0,0]))
-print(t.numRabbits([0,0,1,1,1]))
-print(t.numRabbits([2,1,2,2,2,2,2,2,1,1]))
+# 5
+# 11
+# 5
+# 6
+# 13
 
 
+def main():
+    test = Solution3()
+    print(test.numRabbits([1, 1, 2]))
+    print(test.numRabbits([10, 10, 10]))
+    print(test.numRabbits([1, 0, 1, 0, 0]))
+    print(test.numRabbits([0, 0, 1, 1, 1]))
+    print(test.numRabbits([2, 1, 2, 2, 2, 2, 2, 2, 1, 1]))
 
+
+if __name__ == "__main__":
+    main()
+
+#
+# Created At 2022.12.27 Updated on 2025.4.20 21:55
+#

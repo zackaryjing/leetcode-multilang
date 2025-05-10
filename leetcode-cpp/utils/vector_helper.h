@@ -12,6 +12,15 @@ void show_vector(vector<T> data) {
     cout << endl;
 }
 
+template<size_t T>
+void show_vector(vector<bitset<T>> data) {
+    for (auto k: data) {
+        cout << k << " ";
+    }
+    cout << endl;
+}
+
+
 void show_vector(vector<string> data) {
     for (auto k: data) {
         cout << k << " ";
@@ -24,6 +33,17 @@ void show_matrix(vector<vector<T> > data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << to_string(h) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+template<size_t T>
+void show_matrix(vector<vector<bitset<T> > > data) {
+    for (auto k: data) {
+        for (auto h: k) {
+            cout << h << " ";
         }
         cout << endl;
     }
