@@ -1,5 +1,6 @@
 // problem: https://leetcode.cn/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros/?envType=daily-question&envId=2025-05-10
 
+package leetcodeNo2918
 class Solution {
     fun minSum(nums1: IntArray, nums2: IntArray): Long {
         val res = 0L
