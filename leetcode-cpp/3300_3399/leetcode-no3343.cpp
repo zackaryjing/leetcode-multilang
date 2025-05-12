@@ -1,7 +1,10 @@
 // problem: https://leetcode.cn/problems/count-number-of-balanced-permutations/?envType=daily-question&envId=2025-05-09
 #include <bitset>
 #include <iostream>
+#include <functional>
 #include <ranges>
+#include <memory>
+#include <string.h>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -14,10 +17,70 @@ using namespace std;
 #define M 1000000007
 
 class Solution {
+public:
+    constexpr static long long MOD = 1e9 + 7;
+
+    int countBalancedPermutations(string num) {
+        int tot = 0, n = num.size();
+        vector<int> cnt(10);
+        for (char ch : num) {
+            int d = ch - '0';
+            cnt[d]++;
+            tot += d;
+        }
+        if (tot % 2 != 0) {
+            return 0;
+        }
+
+        int target = tot / 2;
+        int maxOdd = (n + 1) / 2;
+        vector<int> psum(11);
+        vector<vector<long long>> comb(maxOdd + 1, vector<long long>(maxOdd + 1));
+        long long memo[10][target + 1][maxOdd + 1];
+        memset(memo, 0xff, sizeof(memo));
+        for (int i = 0; i <= maxOdd; i++) {
+            comb[i][i] = comb[i][0] = 1;
+            for (int j = 1; j < i; j++) {
+                comb[i][j] = (comb[i - 1][j] + comb[i - 1][j - 1]) % MOD;
+            }
+        }
+        for (int i = 9; i >= 0; i--) {
+            psum[i] = psum[i + 1] + cnt[i];
+        }
+
+        function<long long(int, int, int)> dfs = [&](int pos, int curr, int oddCnt) -> long long {
+            /* 如果剩余位置无法合法填充，或者当前奇数位置元素和大于目标值 */
+            if (oddCnt < 0 || psum[pos] < oddCnt || curr > target) {
+                return 0;
+            }
+            if (pos > 9) {
+                return curr == target && oddCnt == 0;
+            }
+            if (memo[pos][curr][oddCnt] != -1) {
+                return memo[pos][curr][oddCnt];
+            }
+            /* 偶数位剩余需要填充的位数 */
+            int evenCnt = psum[pos] - oddCnt;
+            long long res = 0;
+            for (int i = max(0, cnt[pos] - evenCnt); i <= min(cnt[pos], oddCnt); i++) {
+                /* 当前数字在奇数位填充 i 位，偶数位填充 cnt[pos] - i 位 */
+                long long ways = comb[oddCnt][i] * comb[evenCnt][cnt[pos] - i] % MOD;
+                res = (res +  ways * dfs(pos + 1, curr + i * pos, oddCnt - i) % MOD) % MOD;
+            }
+            memo[pos][curr][oddCnt] = res;
+            return res;
+        };
+
+        return dfs(0, 0, maxOdd);
+    }
+};
+
+
+class Solution_2 {
     int factorial_[N + 1];
 
 public:
-    Solution() {
+    Solution_2() {
         factorial_[0] = 1;
         long long res = 1;
         for (int i = 1; i <= N; i++) {

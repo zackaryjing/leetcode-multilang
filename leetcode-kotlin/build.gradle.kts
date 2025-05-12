@@ -10,4 +10,4 @@ dependencies {
     implementation(kotlin("stdlib"))
 }
 
-sourceSets["main"].kotlin.srcDirs("2900_2999","1500_1599")
+sourceSets["main"].kotlin.srcDirs("2900_2999", "1500_1599", "2000_2099","1100_1199")

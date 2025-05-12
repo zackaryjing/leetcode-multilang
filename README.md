@@ -4,4 +4,4 @@ This repo is the combination of [Leetcode-cpp](https://github.com/zhiyangjing/le
 
 
 
-Trying to live a hardcore life.
+> Trying to live a hardcore life.
