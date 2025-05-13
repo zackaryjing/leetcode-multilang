@@ -6,6 +6,19 @@ edition = "2024"
 [dependencies]
 utils = { path = "utils" }
 
+
+[[bin]]
+name = "leetcode-no3408"
+path = "3400_3499/leetcode-no3408.rs"
+
+[[bin]]
+name = "leetcode-no3337"
+path = "3300_3399/leetcode-no3337.rs"
+
+[[bin]]
+name = "leetcode-no3335"
+path = "3300_3399/leetcode-no3335.rs"
+
 [[bin]]
 name = "leetcode-no1177"
 path = "1100_1199/leetcode-no1177.rs"
