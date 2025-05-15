@@ -6,6 +6,21 @@ edition = "2024"
 [dependencies]
 utils = { path = "utils" }
 
+[[bin]]
+name = "leetcode-no2055"
+path = "2000_2099/leetcode-no2055.rs"
+
+[[bin]]
+name = "reverse_test"
+path = "experiments/reverse_test.rs"
+
+[[bin]]
+name = "leetcode-no1363"
+path = "1300_1399/leetcode-no1363.rs"
+
+[[bin]]
+name = "leetcode-no2900"
+path = "2900_2999/leetcode-no2900.rs"
 
 [[bin]]
 name = "leetcode-no3408"
