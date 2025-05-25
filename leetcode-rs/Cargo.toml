@@ -5,6 +5,51 @@ edition = "2024"
 
 [dependencies]
 utils = { path = "utils" }
+rand = "0.9.1"
+
+[[bin]]
+name = "leetcode-no398"
+path = "0300_0399/leetcode-no398.rs"
+
+[[bin]]
+name = "leetcode-no454"
+path = "0400_0499/leetcode-no454.rs"
+
+[[bin]]
+name = "leetcode-no457"
+path = "0400_0499/leetcode-no457.rs"
+
+[[bin]]
+name = "leetcode-no592"
+path = "0500_0599/leetcode-no592.rs"
+
+[[bin]]
+name = "leetcode-no2131"
+path = "2100_2199/leetcode-no2131.rs"
+
+[[bin]]
+name = "leetcode-no1221"
+path = "1200_1299/leetcode-no1221.rs"
+
+[[bin]]
+name = "leetcode-no989"
+path = "0900_0999/leetcode-no989.rs"
+
+[[bin]]
+name = "leetcode-no942"
+path = "0900_0999/leetcode-no942.rs"
+
+[[bin]]
+name = "leetcode-no771"
+path = "0700_0799/leetcode-no771.rs"
+
+[[bin]]
+name = "leetcode-no659"
+path = "0600_0699/leetcode-no659.rs"
+
+[[bin]]
+name = "leetcode-no3068"
+path = "3000_3099/leetcode-no3068.rs"
 
 [[bin]]
 name = "leetcode-no3362"
