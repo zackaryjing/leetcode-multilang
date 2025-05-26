@@ -1,6 +1,9 @@
+
+pub fn foo(k:&mut i32) {
+    *k += 1;
+    println!("{:?}",k);
+}
 fn main() {
-    let mut k: &str = "asdf";
-    // let mut k : String = "asdf".to_string();
-    let t: &str = &k[..3];
-    let h = t[..2];
+    let mut h = 100;
+    foo(&mut h);
 }

@@ -5,7 +5,22 @@ edition = "2024"
 
 [dependencies]
 utils = { path = "utils" }
-rand = "0.9.1"
+
+[[bin]]
+name = "leetcode-no1857"
+path = "1800_1899/leetcode-no1857.rs"
+
+[[bin]]
+name = "leetcode-no767"
+path = "0700_0799/leetcode-no767.rs"
+
+[[bin]]
+name = "leetcode-no1198"
+path = "1100_1199/leetcode-no1198.rs"
+
+[[bin]]
+name = "leetcode-no1184"
+path = "1100_1199/leetcode-no1184.rs"
 
 [[bin]]
 name = "leetcode-no398"

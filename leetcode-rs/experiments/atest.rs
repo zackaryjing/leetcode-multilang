@@ -30,7 +30,6 @@ fn main() {
             1
         } else {
             test * i * f.borrow().as_ref().unwrap()(i - 1);
-            test += 1;
             test
         }
     }));
