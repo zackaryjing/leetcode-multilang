@@ -7,10 +7,11 @@ using namespace std;
 
 template<typename T>
 void show_vector(vector<T> data) {
+    cout << "{";
     for (auto k: data) {
         cout << to_string(k) << " ";
     }
-    cout << endl;
+    cout << "}"<< endl;
 }
 
 template<size_t T>
