@@ -3,38 +3,28 @@ use utils::print_matrix;
 // problem: https://leetcode.cn/problems/get-biggest-three-rhombus-sums-in-a-grid/
 struct Solution;
 
-use std::cmp::{max, min};
-use std::collections::BTreeSet;
 
 // time spent: 2:07:20
 
+use std::cmp::{max, min};
 impl Solution {
-    // [Pass] It works... but writing this hurt my sole.
+    // [Pass] It works... but writing this hurt my soul.
+    // well, actually,the performance is not that bad after I remove the BTreeSet part.
+    // it's an old-fashioned way to get the top three largest numbers.
     pub fn get_biggest_three(grid: Vec<Vec<i32>>) -> Vec<i32> {
         let n = grid.len();
         let m = grid[0].len();
-        // print_matrix(&grid);
-        // println!();
         let mut prefix_bl_tr = vec![vec![0; m]; n];
         let mut prefix_tl_br = vec![vec![0; m]; n];
         let mut max_val = 0;
         let mut max_val2 = 0;
         let mut max_val3 = 0;
-        let mut set = BTreeSet::new();
 
         for i in 0..n {
             let mut last = 0;
             let mut last2 = 0;
             for j in 0..=min(i, m - 1) {
                 let val = grid[i - j][j];
-
-                if val > 0 {
-                    set.insert(val);
-                    if set.len() > 3 {
-                        let min_val = *set.iter().next().unwrap();
-                        set.remove(&min_val); // 保持集合只有最大三个不重复的
-                    }
-                }
                 if val > max_val {
                     max_val3 = max_val2;
                     max_val2 = max_val;
@@ -58,13 +48,6 @@ impl Solution {
             let mut last2 = 0;
             for i in (max(0, j as i32 + n as i32 - m as i32) as usize..n).rev() {
                 let val = grid[i][j + n - 1 - i];
-                if val > 0 {
-                    set.insert(val);
-                    if set.len() > 3 {
-                        let min_val = *set.iter().next().unwrap();
-                        set.remove(&min_val); // 保持集合只有最大三个不重复的
-                    }
-                }
 
                 if val > max_val {
                     max_val3 = max_val2;
@@ -76,8 +59,6 @@ impl Solution {
                 } else if val > max_val3 && val != max_val2 && val != max_val {
                     max_val3 = val;
                 }
-
-                // max_val = max(max_val, grid[i][j + n - 1 - i]);
                 last += grid[i][j + n - 1 - i];
                 prefix_bl_tr[i][j + n - 1 - i] = last;
                 last2 += grid[n - 1 - i][j + n - 1 - i];
@@ -92,10 +73,6 @@ impl Solution {
                     let r = (i + length / 2, j + length - 1);
                     let t = (i, j + length / 2);
                     let b = (i + length - 1, j + length / 2);
-                    // println!(
-                    //     "{:?} {:?} {:?} {:?} {:?} {:?} {:?} {:?}",
-                    //     l.0, l.1, r.0, r.1, t.0, t.1, b.0, b.1
-                    // );
                     let mut val = 0;
                     val += prefix_bl_tr[t.0][t.1]
                         - if l.1 > 0 {
@@ -103,21 +80,18 @@ impl Solution {
                         } else {
                             0
                         };
-                    // println!("{:?}", val);
                     val += prefix_bl_tr[r.0][r.1]
                         - if b.0 < n - 1 {
                             prefix_bl_tr[b.0 + 1][b.1 - 1]
                         } else {
                             0
                         };
-                    // println!("{:?}", val);
                     val += prefix_tl_br[b.0][b.1]
                         - if l.1 > 0 {
                             prefix_tl_br[l.0 - 1][l.1 - 1]
                         } else {
                             0
                         };
-                    // println!("{:?}", val);
                     val += prefix_tl_br[r.0][r.1]
                         - if t.0 > 0 {
                             prefix_tl_br[t.0 - 1][t.1 - 1]
@@ -125,14 +99,6 @@ impl Solution {
                             0
                         };
                     val -= grid[l.0][l.1] + grid[b.0][b.1] + grid[t.0][t.1] + grid[r.0][r.1];
-                    // println!("{:?}", val);
-                    if val > 0 {
-                        set.insert(val);
-                        if set.len() > 3 {
-                            let min_val = *set.iter().next().unwrap();
-                            set.remove(&min_val); // 保持集合只有最大三个不重复的
-                        }
-                    }
 
                     if val > max_val {
                         max_val3 = max_val2;
@@ -144,17 +110,11 @@ impl Solution {
                     } else if val > max_val3 && val != max_val2 && val != max_val {
                         max_val3 = val;
                     }
-                    // println!("{:?} {:?} {:?}", max_val, max_val2, max_val3);
                 }
             }
         }
 
-        // print_matrix(&prefix_bl_tr);
-        // println!();
-        // print_matrix(&prefix_tl_br);
         let mut res = vec![];
-
-        // println!("{:?}",set);
 
         if max_val != 0 {
             res.push(max_val);
