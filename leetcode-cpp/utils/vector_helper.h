@@ -2,16 +2,17 @@
 #include <memory>
 #include <vector>
 #include <bitset>
+#include <string>
 
 using namespace std;
 
 template<typename T>
 void show_vector(vector<T> data) {
-    cout << "{";
+    cout << "[";
     for (auto k: data) {
         cout << to_string(k) << " ";
     }
-    cout << "}"<< endl;
+    cout << "]"<< endl;
 }
 
 template<size_t T>
@@ -22,6 +23,13 @@ void show_vector(vector<bitset<T>> data) {
     cout << endl;
 }
 
+void show_vector(vector<bool> data) {
+    cout << "[";
+    for (auto k: data) {
+        cout << k << " ";
+    }
+    cout << "]" << endl;
+}
 
 void show_vector(vector<string> data) {
     for (auto k: data) {
