@@ -12,7 +12,7 @@ void show_vector(vector<T> data) {
     for (auto k: data) {
         cout << to_string(k) << " ";
     }
-    cout << "]"<< endl;
+    cout << "]" << endl;
 }
 
 template<size_t T>
@@ -39,7 +39,7 @@ void show_vector(vector<string> data) {
 }
 
 template<typename T>
-void show_matrix(vector<vector<T> > data) {
+void show_matrix(vector<vector<T>> data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << to_string(h) << " ";
@@ -50,7 +50,7 @@ void show_matrix(vector<vector<T> > data) {
 }
 
 template<size_t T>
-void show_matrix(vector<vector<bitset<T> > > data) {
+void show_matrix(vector<vector<bitset<T>>> data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << h << " ";
@@ -62,8 +62,25 @@ void show_matrix(vector<vector<bitset<T> > > data) {
 
 template<typename T>
 std::vector<T> &temp_vector(std::vector<T> v) {
-    static std::vector<std::unique_ptr<std::vector<T> > > pool;
-    pool.emplace_back(std::make_unique<std::vector<T> >(std::move(v)));
+    static std::vector<std::unique_ptr<std::vector<T>>> pool;
+    pool.emplace_back(std::make_unique<std::vector<T>>(std::move(v)));
+    return *pool.back();
+}
+
+template<typename T>
+std::vector<T> &temp_vector(std::initializer_list<T> il) {
+    return temp_vector(std::vector<T>(il));
+}
+
+inline std::vector<int> &temp_vector(vector<int> v) {
+    static std::vector<std::unique_ptr<std::vector<int>>> pool;
+    pool.emplace_back(std::make_unique<std::vector<int>>(std::move(v)));
+    return *pool.back();
+}
+
+inline std::vector<vector<int>> &temp_vector(vector<vector<int>> v) {
+    static std::vector<std::unique_ptr<std::vector<vector<int>>>> pool;
+    pool.emplace_back(std::make_unique<std::vector<vector<int>>>(std::move(v)));
     return *pool.back();
 }
 
