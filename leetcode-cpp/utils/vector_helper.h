@@ -60,11 +60,16 @@ void show_matrix(vector<vector<bitset<T>>> data) {
     cout << endl;
 }
 
+// need it to be a vector, not a initializer_list
 template<typename T>
 std::vector<T> &temp_vector(std::vector<T> v) {
     static std::vector<std::unique_ptr<std::vector<T>>> pool;
     pool.emplace_back(std::make_unique<std::vector<T>>(std::move(v)));
     return *pool.back();
+}
+
+inline std::vector<string> &temp_vector(std::initializer_list<const char *> il) {
+    return temp_vector(std::vector<string>(il.begin(), il.end()));
 }
 
 template<typename T>
