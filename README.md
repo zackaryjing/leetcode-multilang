@@ -21,3 +21,10 @@ This repo is the combination of [Leetcode-cpp](https://github.com/zhiyangjing/le
 - [ ] 1100 ...?
 - ...?
 
+
+
+A tool to count lines of code:
+```shell
+# only tested in powershell
+git ls-files | cloc --list-file=- 
+```
