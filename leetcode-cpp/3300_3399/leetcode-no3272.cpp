@@ -33,7 +33,7 @@ public:
                 times[i - '0']++;
             }
             int temp = (n - times[0]) * factorial[n - 1];
-            for (auto time : times) {
+            for (auto time: times) {
                 temp /= factorial[time];
             }
             res += temp;
