@@ -9,20 +9,29 @@ impl Solution {
         let m = (n / k) + 1;
         let mut res = Vec::with_capacity(m);
         let mut temp = Vec::with_capacity(k);
-        for i in 0..n {
+        temp.push(s[0]);
+        for i in 1..n {
             if i % k == 0 {
                 res.push(String::from_utf8(temp).unwrap());
                 temp = Vec::with_capacity(k);
-            } else {
-                temp.push(s[i]);
             }
+            temp.push(s[i]);
+        }
+        if temp.len() > 0 {
+            if temp.len() < k {
+                temp.append(&mut vec![fill as u8; k - temp.len()]);
+            }
+            res.push(String::from_utf8(temp).unwrap());
         }
         res
     }
 }
 
 fn main() {
-    println!("{:?}", Solution::);
+    println!(
+        "{:?}",
+        Solution::divide_string("abcdefghi".to_string(), 3, 'x')
+    );
 }
 
 //
