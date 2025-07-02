@@ -1,0 +1,4 @@
+- [ ] 2081 https://leetcode.cn/problems/sum-of-k-mirror-numbers/?envType=daily-question&envId=2025-06-28
+- [ ] 2040 https://leetcode.cn/problems/kth-smallest-product-of-two-sorted-arrays/?envType=daily-question&envId=2025-06-28
+- [ ] 2558 https://leetcode.cn/problems/longest-subsequence-repeated-k-times/?envType=daily-question&envId=2025-06-28
+- [ ] 1498 https://leetcode.cn/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
