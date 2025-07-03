@@ -1,11 +1,60 @@
 // problem: https://leetcode.cn/problems/number-of-operations-to-make-network-connected/
 struct Solution;
 
+use std::mem::swap;
+struct UnionFind {
+    parent: Vec<usize>,
+    size: Vec<usize>,
+    n: usize,
+    set_count: usize,
+}
+
+impl UnionFind {
+    pub fn new(n: usize) -> Self {
+        Self {
+            parent: (0..n).collect(),
+            size: vec![1; n],
+            n,
+            set_count: n,
+        }
+    }
+
+    pub fn findset(&mut self, x: usize) -> usize {
+        if self.parent[x] == x {
+            x
+        } else {
+            self.parent[x] = self.findset(self.parent[x]);
+            self.parent[x]
+        }
+    }
+
+    pub fn unite(&mut self, x: usize, y: usize) -> bool {
+        let mut x = self.findset(x);
+        let mut y = self.findset(y);
+        if x == y {
+            return false;
+        }
+        if self.size[x] < self.size[y] {
+            swap(&mut x, &mut y);
+        }
+        self.parent[y] = x;
+        self.size[x] += self.size[y];
+        self.set_count -= 1;
+        true
+    }
+}
+
 impl Solution {
     // [Pass] performance not so good
     pub fn make_connected(n: i32, connections: Vec<Vec<i32>>) -> i32 {
-        
-        0
+        if n - 1 > connections.len() as i32 {
+            return -1;
+        }
+        let mut uf = UnionFind::new(n as usize);
+        for connection in connections {
+            uf.unite(connection[0] as usize, connection[1] as usize);
+        }
+        uf.set_count as i32 - 1
     }
 }
 
