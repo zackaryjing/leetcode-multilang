@@ -2,3 +2,5 @@
 - [ ] 2040 https://leetcode.cn/problems/kth-smallest-product-of-two-sorted-arrays/?envType=daily-question&envId=2025-06-28
 - [ ] 2558 https://leetcode.cn/problems/longest-subsequence-repeated-k-times/?envType=daily-question&envId=2025-06-28
 - [ ] 1498 https://leetcode.cn/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
+- [ ] 1353 https://leetcode.cn/submissions/detail/642333126/
+- [ ] 1751 https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/
