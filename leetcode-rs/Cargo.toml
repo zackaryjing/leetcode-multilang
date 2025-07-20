@@ -8,6 +8,85 @@ utils = { path = "utils" }
 
 
 
+[[bin]]
+name = "leetcode-no645"
+path = "0600_0699/leetcode-no645.rs"
+
+[[bin]]
+name = "leetcode-no2656"
+path = "2500_2599/leetcode-no2656.rs"
+
+[[bin]]
+name = "leetcode-no1094"
+path = "1000_1099/leetcode-no1094.rs"
+
+[[bin]]
+name = "leetcode-no3169"
+path = "3100_3199/leetcode-no3169.rs"
+
+[[bin]]
+name = "leetcode-no645"
+path = "0600_0699/leetcode-no645.rs"
+
+[[bin]]
+name = "leetcode-no1900"
+path = "1900_1999/leetcode-no1900.rs"
+
+[[bin]]
+name = "leetcode-no204"
+path = "0200_0299/leetcode-no204.rs"
+
+[[bin]]
+name = "leetcode-no3439"
+path = "3400_3499/leetcode-no3439.rs"
+
+[[bin]]
+name = "leetcode-no3440"
+path = "3400_3499/leetcode-no3440.rs"
+
+[[bin]]
+name = "ord_test"
+path = "experiments/ord_test.rs"
+
+[[bin]]
+name = "leetcode-no1680"
+path = "1600_1699/leetcode-no1680.rs"
+
+[[bin]]
+name = "leetcode-no1353"
+path = "1300_1399/leetcode-no1353.rs"
+
+[[bin]]
+name = "leetcode-no1865"
+path = "1800_1899/leetcode-no1865.rs"
+
+[[bin]]
+name = "leetcode-no2039"
+path = "2000_2099/leetcode-no2039.rs"
+
+[[bin]]
+name = "leetcode-no1163"
+path = "1100_1199/leetcode-no1163.rs"
+
+[[bin]]
+name = "leetcode-no3307"
+path = "3300_3399/leetcode-no3307.rs"
+
+[[bin]]
+name = "leetcode-no2998"
+path = "2900_2999/leetcode-no2998.rs"
+
+[[bin]]
+name = "leetcode-no856"
+path = "0800_0899/leetcode-no856.rs"
+
+[[bin]]
+name = "leetcode-no3304"
+path = "3300_3399/leetcode-no3304.rs"
+
+[[bin]]
+name = "leetcode-no3333"
+path = "3300_3399/leetcode-no3333.rs"
 
 [[bin]]
 name = "leetcode-no1020"
@@ -32,6 +111,14 @@ path = ""
 [[bin]]
 name = "leetcode-no2099"
 path = "2000_2099/leetcode-no2099.rs"
+
+[[bin]]
+name = "leetcode-no1319"
+path = "1300_1399/leetcode-no1319.rs"
+
+[[bin]]
+name = "leetcode-no2401"
+path = "2400_2499/leetcode-no2401.rs"
 
 [[bin]]
 name = "leetcode-no2400"

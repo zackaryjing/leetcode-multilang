@@ -1,4 +1,4 @@
-// problem:
+// problem: https://leetcode.cn/problems/binary-prefix-divisible-by-5
 struct Solution;
 
 impl Solution {

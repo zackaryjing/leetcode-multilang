@@ -1,3 +1,4 @@
+// problem: https://leetcode.cn/problems/longest-harmonious-subsequence/description/
 struct Solution;
 
 use std::cmp::max;
