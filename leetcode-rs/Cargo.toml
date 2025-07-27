@@ -9,6 +9,14 @@ utils = { path = "utils" }
 
 
 [[bin]]
+name = "leetcode-no2806"
+path = "2800_2899/leetcode-no2860.rs"
+
+[[bin]]
+name = "leetcode-no2210"
+path = "2200_2299/leetcode-no2210.rs"
+
+[[bin]]
 name = "leetcode-no1524"
 path = "1500_1599/leetcode-no1524.rs"
 
