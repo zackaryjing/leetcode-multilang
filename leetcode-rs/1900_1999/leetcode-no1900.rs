@@ -8,48 +8,45 @@ use std::usize;
 impl Solution {
     pub fn earliest_and_latest(mut n: i32, first_player: i32, second_player: i32) -> Vec<i32> {
         let n = n as usize;
-        let memo_out = Rc::new(RefCell::new(vec![
+        let memo = Rc::new(RefCell::new(vec![
             vec![vec![(0usize, 0usize); n + 1]; n + 1];
             n + 1
         ]));
-        let dfs_inner = {
-            let memo = memo_out.clone();
-            move |f: &dyn Fn(usize, usize, usize) -> (usize, usize),
-                  n: usize,
-                  mut first: usize,
-                  mut second: usize|
-                  -> (usize, usize) {
-                if first + second == n + 1 {
-                    return (1, 1);
-                }
-                if first + second > n + 1 {
-                    (first, second) = (n + 1 - second, n + 1 - first);
-                }
-
-                let res = memo.borrow()[n][first][second];
-                if res.0 != 0 {
-                    return res;
-                }
-
-                let m = (n + 1) / 2;
-                let min_mid = if second <= m { 0 } else { second - n / 2 - 1 };
-                let max_mid = if second <= m {
-                    second - first
-                } else {
-                    m - first
-                };
-                let mut earliest = usize::MAX;
-                let mut latest = 0;
-                for left in 0..first {
-                    for mid in min_mid..max_mid {
-                        let (e, l) = f(m, left + 1, left + mid + 2);
-                        earliest = min(earliest, e);
-                        latest = max(latest, l);
-                    }
-                }
-                memo.borrow_mut()[n][first][second] = (earliest + 1, latest + 1);
-                return (earliest + 1, latest + 1);
+        let dfs_inner = move |f: &dyn Fn(usize, usize, usize) -> (usize, usize),
+                              n: usize,
+                              mut first: usize,
+                              mut second: usize|
+              -> (usize, usize) {
+            if first + second == n + 1 {
+                return (1, 1);
             }
+            if first + second > n + 1 {
+                (first, second) = (n + 1 - second, n + 1 - first);
+            }
+
+            let res = memo.borrow()[n][first][second];
+            if res.0 != 0 {
+                return res;
+            }
+
+            let m = (n + 1) / 2;
+            let min_mid = if second <= m { 0 } else { second - n / 2 - 1 };
+            let max_mid = if second <= m {
+                second - first
+            } else {
+                m - first
+            };
+            let mut earliest = usize::MAX;
+            let mut latest = 0;
+            for left in 0..first {
+                for mid in min_mid..max_mid {
+                    let (e, l) = f(m, left + 1, left + mid + 2);
+                    earliest = min(earliest, e);
+                    latest = max(latest, l);
+                }
+            }
+            memo.borrow_mut()[n][first][second] = (earliest + 1, latest + 1);
+            return (earliest + 1, latest + 1);
         };
         fn real_dfs<'a>(
             f: &'a dyn Fn(
