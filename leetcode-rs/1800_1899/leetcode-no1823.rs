@@ -16,7 +16,7 @@ impl Solution {
             
             for j in 0..k as usize {
                 if !vis[(i + j) % n] {
-                    
+                        
                 }
             }
         }

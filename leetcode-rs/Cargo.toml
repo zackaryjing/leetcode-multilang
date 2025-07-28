@@ -17,6 +17,18 @@ name = "leetcode-no645"
 path = "0600_0699/leetcode-no645.rs"
 
 [[bin]]
+name = "leetcode-no2044"
+path = "2000_2099/leetcode-no2044.rs"
+
+[[bin]]
+name = "leetcode-no2806"
+path = "2800_2899/leetcode-no2860.rs"
+
+[[bin]]
+name = "leetcode-no2210"
+path = "2200_2299/leetcode-no2210.rs"
+
+[[bin]]
 name = "leetcode-no1524"
 path = "1500_1599/leetcode-no1524.rs"
 
@@ -80,6 +92,7 @@ path = "1000_1099/leetcode-no1094.rs"
 name = "leetcode-no3169"
 path = "3100_3199/leetcode-no3169.rs"
 
+
 [[bin]]
 name = "leetcode-no1900"
 path = "1900_1999/leetcode-no1900.rs"
@@ -139,10 +152,6 @@ path = "3300_3399/leetcode-no3304.rs"
 [[bin]]
 name = "leetcode-no3333"
 path = "3300_3399/leetcode-no3333.rs"
-
-[[bin]]
-name = "leetcode-no1020"
-path = "1000_1099/leetcode-no1020.rs"
 
 [[bin]]
 name = "leetcode-no3330"
