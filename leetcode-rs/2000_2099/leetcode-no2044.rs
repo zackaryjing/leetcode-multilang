@@ -7,26 +7,25 @@ impl Solution {
         for num in &nums {
             m_num |= num;
         }
-        println!("{:?}",m_num);
-        let n = nums.len();
         let mut res = 0;
-        let mut cur = 0;
-        let mut right = 0;
-        for left in 0..n {
-            while right < n && cur != m_num {
-                cur |= nums[right];
-                right += 1;
-            }
-            if cur == m_num && right < n {
-                res += 2i32.pow((n - right) as u32 - 1);
-                cur = 0;
-                for i in left + 1..=right {
-                    cur |= nums[i];
+
+        let n = nums.len();
+        let mut s_temp = vec![0; n + 1];
+        let mut pos = n;
+        for i in (0..2i32.pow(n as u32)).rev() {
+            for j in (1..=pos).rev() {
+                if (i >> (j - 1)) & 1 == 1 {
+                    s_temp[j - 1] = s_temp[j] | nums[n - j];
+                } else {
+                    s_temp[j - 1] = s_temp[j];
                 }
-            } else {
-                break;
             }
+            if s_temp[0] == m_num {
+                res += 1;
+            }
+            pos = (i ^ (i - 1)).count_ones() as usize;
         }
+
         res
     }
 }
