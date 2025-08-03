@@ -1,4 +1,4 @@
-// problem: https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or
+// problem: https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or/submissions/647973616/?envType=daily-question&envId=2025-07-29
 struct Solution;
 
 use std::cmp::max;
