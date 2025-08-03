@@ -1,8 +1,6 @@
 // problem: https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or/submissions/647973616/?envType=daily-question&envId=2025-07-29
 struct Solution;
 
-// time spent: 47:35
-
 use std::cmp::max;
 impl Solution {
     pub fn smallest_subarrays(nums: Vec<i32>) -> Vec<i32> {
@@ -54,14 +52,9 @@ impl Solution {
 }
 
 fn main() {
-    println!(
-        "{:?} e: [3, 3, 2, 2, 1]",
-        Solution::smallest_subarrays(vec![1, 0, 2, 1, 3])
-    );
-    println!("{:?} e: [2, 1]", Solution::smallest_subarrays(vec![1, 2]));
-    println!("{:?} e: [1]", Solution::smallest_subarrays(vec![0]));
+    println!("{:?}", Solution::smallest_subarrays(vec![1, 2, 3, 4]));
 }
 
 //
-// Created by zhiya at 7/29/2025 1:29 PM
+// Created by ASUS at 8/2/2025 6:49 PM
 //

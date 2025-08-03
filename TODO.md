@@ -7,4 +7,4 @@
 - [ ] 1948 https://leetcode.cn/problems/delete-duplicate-folders-in-system/?envType=daily-question&envId=2025-07-21
 - [ ] 2322 https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree/submissions/
 - [ ] 3480 https://leetcode.cn/problems/maximize-subarrays-after-removing-one-conflicting-pair/description/
-#<'
+- [ ] 2561 https://leetcode.cn/problems/rearranging-fruits/?envType=daily-question&envId=2025-08-02

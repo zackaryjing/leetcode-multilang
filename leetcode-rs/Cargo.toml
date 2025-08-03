@@ -7,6 +7,13 @@ edition = "2024"
 utils = { path = "utils" }
 
 
+[[bin]]
+name = "leetcode-no2683"
+path = "2600_2699/leetcode-no2683.rs"
+
+[[bin]]
+name = "leetcode-no2656"
+path = "2600_2699/leetcode-no2656.rs"
 
 [[bin]]
 name = "leetcode-no1419"
@@ -91,10 +98,6 @@ path = "3100_3199/leetcode-no3136.rs"
 [[bin]]
 name = "leetcode-no2410"
 path = "2400_2499/leetcode-no2410.rs"
-
-[[bin]]
-name = "leetcode-no2656"
-path = "2500_2599/leetcode-no2656.rs"
 
 [[bin]]
 name = "leetcode-no1094"
