@@ -4,3 +4,4 @@
 - [ ] 1498 https://leetcode.cn/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
 - [ ] 1353 https://leetcode.cn/submissions/detail/642333126/
 - [ ] 1751 https://leetcode.cn/problems/maximum-number-of-events-that-can-be-attended-ii/
+- [ ] 2561 https://leetcode.cn/problems/rearranging-fruits/?envType=daily-question&envId=2025-08-02
