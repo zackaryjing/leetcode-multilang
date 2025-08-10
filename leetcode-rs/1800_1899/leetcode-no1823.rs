@@ -3,20 +3,18 @@ struct Solution;
 
 impl Solution {
     pub fn find_the_winner(n: i32, k: i32) -> i32 {
-        let n = n as usize; 
-        let vis = vec![false;n];
-        
-        let nxt = |pos| {
-            
-        }
+        let n = n as usize;
+        let vis = vec![false; n];
+
+        let nxt = |pos:usize| {
+            0
+        };
         for i in 0..n {
             let mut j = 0;
-            
-            while 
-            
+
             for j in 0..k as usize {
                 if !vis[(i + j) % n] {
-                        
+                    0;
                 }
             }
         }
@@ -25,7 +23,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{:?}", Solution::);
+    println!("{:?}", Solution::find_the_winner(10,10));
 }
 
 //

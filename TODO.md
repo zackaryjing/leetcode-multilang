@@ -8,3 +8,6 @@
 - [ ] 2322 https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree/submissions/
 - [ ] 3480 https://leetcode.cn/problems/maximize-subarrays-after-removing-one-conflicting-pair/description/
 - [ ] 2561 https://leetcode.cn/problems/rearranging-fruits/?envType=daily-question&envId=2025-08-02
+- [ ] 808 https://leetcode.cn/problems/soup-servings/?envType=daily-question&envId=2025-08-11
+- [ ] 3363 https://leetcode.cn/problems/find-the-maximum-number-of-fruits-collected/?envType=daily-quesion&envId=2025-08-11
+- [ ] 3479 https://leetcode.cn/problems/fruits-into-baskets-iii/?envType=daily-question&envId=2025-08-11
