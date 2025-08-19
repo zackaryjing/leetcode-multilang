@@ -17,7 +17,7 @@ This repo is the combination of [Leetcode-cpp](https://github.com/zhiyangjing/le
 - [x] 700 2025-03-19
 - [x] 800 2025-04-23
 - [x] 900 2025-05-29
-- [ ] 1000 ...?
+- [x] 1000 2025-08-06
 - [ ] 1100 ...?
 - [ ] ...?
 

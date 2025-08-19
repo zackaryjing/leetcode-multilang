@@ -9,6 +9,34 @@ utils = { path = "utils" }
 
 
 [[bin]]
+name = "leetcode-no2348"
+path = "2300_2399/leetcode-no2348.rs"
+
+[[bin]]
+name = "leetcode-no3148"
+path = "3100_3199/leetcode-no3148.rs"
+
+[[bin]]
+name = "inv_test"
+path = "experiments/inv_test.rs"
+
+[[bin]]
+name = "leetcode-no2438"
+path = "2400_2499/leetcode-no2438.rs"
+
+[[bin]]
+name = "leetcode-no2787"
+path = "2700_2799/leetcode-no2787.rs"
+
+[[bin]]
+name = "leetcode-no1323"
+path = "1300_1399/leetcode-no1323.rs"
+
+[[bin]]
+name = "leetcode-no1780"
+path = "1700_1799/leetcode-no1780.rs"
+
+[[bin]]
 name = "leetcode-no869"
 path = "0800_0899/leetcode-no869.rs"
 
