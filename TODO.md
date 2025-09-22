@@ -13,3 +13,4 @@
 - [ ] 3479 https://leetcode.cn/problems/fruits-into-baskets-iii/?envType=daily-question&envId=2025-08-11
 - [ ] 837 https://leetcode.cn/problems/new-21-game/?envType=daily-question&envId=2025-08-17 
 - [ ] 679 https://leetcode.cn/problems/24-game/description/?envType=daily-question&envId=2025-08-19 
+- [ ] 1020
