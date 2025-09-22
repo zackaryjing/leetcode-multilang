@@ -1,7 +1,7 @@
 // problem: https://leetcode.cn/problems/guess-number-higher-or-lower-ii/
 struct Solution;
 
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 
 use std::cmp::{max, min};
 impl Solution {

@@ -1,5 +1,5 @@
 use std::collections::VecDeque;
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 
 // problem: https://leetcode.cn/problems/number-of-ways-to-paint-n-3-grid/
 struct Solution;

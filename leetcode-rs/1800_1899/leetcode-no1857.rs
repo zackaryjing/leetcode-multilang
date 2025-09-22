@@ -1,7 +1,7 @@
 // problem: https://leetcode.cn/problems/largest-color-value-in-a-directed-graph/?envType=daily-question&envId=2025-05-26
 struct Solution;
 struct Solution_2;
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 
 use std::cmp::max;
 use std::collections::{HashMap, HashSet, VecDeque};

@@ -1,4 +1,4 @@
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 
 // problem: https://leetcode.cn/problems/count-submatrices-with-all-ones/
 struct Solution;
