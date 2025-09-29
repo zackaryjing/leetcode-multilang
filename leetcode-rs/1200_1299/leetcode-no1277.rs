@@ -5,10 +5,26 @@ struct Solution;
 use std::cmp::min;
 impl Solution {
     pub fn count_squares(matrix: Vec<Vec<i32>>) -> i32 {
-
-        0
+        let n = matrix.len();
+        let m = matrix[0].len();
+        let mut dp = vec![vec![0; m]; n];
+        let mut res = 0;
+        for i in 0..n {
+            for j in 0..m {
+                if i == 0 || j == 0 {
+                    dp[i][j] = matrix[i][j];
+                } else if matrix[i][j] == 0 {
+                    dp[i][j] = 0;
+                } else {
+                    dp[i][j] = min(dp[i][j - 1], min(dp[i - 1][j], dp[i - 1][j - 1])) + 1;
+                }
+                res += dp[i][j];
+            }
+        }
+        res
     }
 }
+
 impl Solution {
     pub fn count_squares_2(matrix: Vec<Vec<i32>>) -> i32 {
         let n = matrix.len();

@@ -21,6 +21,10 @@ name = "leetcode-no2859"
 path = "2800_2899/leetcode-no2859.rs"
 
 [[bin]]
+name = "leetcode-no2062"
+path = "2000_2099/leetcode-no2062.rs"
+
+[[bin]]
 name = "leetcode-no1333"
 path = "1300_1399/leetcode-no1333.rs"
 
@@ -31,10 +35,6 @@ path = "2900_2999/leetcode-no2938.rs"
 [[bin]]
 name = "leetcode-no1700"
 path = "1700_1799/leetcode-no1700.rs"
-
-[[bin]]
-name = "leetcode-no2661"
-path = "3400_3499"
 
 [[bin]]
 name = "leetcode-no3259"

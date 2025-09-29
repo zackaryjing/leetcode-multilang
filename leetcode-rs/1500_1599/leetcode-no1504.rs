@@ -5,7 +5,6 @@ struct Solution;
 
 use std::cmp::min;
 impl Solution {
-    // [Pass] try to perf ...
     pub fn num_submat(mat: Vec<Vec<i32>>) -> i32 {
         let m = mat[0].len();
         let n = mat.len();
