@@ -3,37 +3,57 @@ struct Solution;
 
 impl Solution {
     pub fn count_vowel_substrings(word: String) -> i32 {
-        let cnt = [0;6];
+        let mut cnt = [0; 6];
         let word = word.as_bytes();
         let n = word.len();
         let mut res = 0;
-        for i in  0..n {
-            let mut index = 0;
-            let mut is_vowel = false;
-            match word[i] {
-                b'a' => {index = 0;is_vowel = true},
-                b'e' => {index = 1;is_vowel = true},
-                b'i' => {index = 2;is_vowel = true},
-                b'o' => {index = 3;is_vowel = true},
-                b'u' => {index = 4;is_vowel = true},
-                _ => index = 5
-            }
-            cnt[index] += 1;
-            if is_vowel {
-                for i in 0..5 {
-                    if cnt[i] != 1 {
-                        break;
-                    }
+        let n = word.len();
+        let pos = |c: u8| match c {
+            b'a' => 0,
+            b'e' => 1,
+            b'i' => 2,
+            b'o' => 3,
+            b'u' => 4,
+            _ => 5,
+        };
+        let check = |count: &[i32; 6]| -> bool {
+            for i in 0..5usize {
+                if count[i] == 0 {
+                    return false;
                 }
             }
+            return true;
+        };
+        for i in 0..n {
+            for j in i..n {
+                let p = pos(word[j]);
+                if p == 5 {
+                    break;
+                }
+                cnt[p] += 1;
+                if check(&cnt) {
+                    res += 1;
+                }
+            }
+            cnt = [0, 0, 0, 0, 0, 0];
         }
-
-
+        res
     }
 }
 
 fn main() {
-    println!("{:?}", Solution::count_vowel_substirngs());
+    println!(
+        "{:?}",
+        Solution::count_vowel_substrings("aeiouu".to_string())
+    );
+    println!(
+        "{:?}",
+        Solution::count_vowel_substrings("unicornarihan".to_string())
+    );
+    println!(
+        "{:?}",
+        Solution::count_vowel_substrings("cuaieuouac".to_string())
+    );
 }
 
 //

@@ -1,8 +1,8 @@
+#include <bitset>
 #include <iostream>
 #include <memory>
-#include <vector>
-#include <bitset>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -43,6 +43,16 @@ void show_matrix(vector<vector<T>> data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << to_string(h) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+void show_matrix(vector<vector<char>> data) {
+    for (auto k: data) {
+        for (auto h: k) {
+            cout << h << " ";
         }
         cout << endl;
     }
