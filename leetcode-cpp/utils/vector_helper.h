@@ -49,6 +49,17 @@ void show_matrix(vector<vector<T>> data) {
     cout << endl;
 }
 
+void show_matrix(vector<vector<string>> data) {
+    for (auto k: data) {
+        for (auto h: k) {
+            cout << h << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+
 void show_matrix(vector<vector<char>> data) {
     for (auto k: data) {
         for (auto h: k) {
