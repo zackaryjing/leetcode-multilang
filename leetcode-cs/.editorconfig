@@ -1,0 +1,11 @@
+[*.cs]
+# 使用 Unix 换行
+end_of_line = lf
+
+# 括号位置风格
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+
+# 缩进设置
+indent_style = space
+indent_size = 4
