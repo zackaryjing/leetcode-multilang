@@ -1,8 +1,7 @@
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 
 // problem: https://leetcode.cn/problems/get-biggest-three-rhombus-sums-in-a-grid/
 struct Solution;
-
 
 // time spent: 2:07:20
 

@@ -4,4 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [lib]
-path = "vec_helper.rs"  # 让它把 vec_helper.rs 当 lib.rs 用
+path = "src/lib.rs"  # 让它把 vec_helper.rs 当 lib.rs 用
+
+

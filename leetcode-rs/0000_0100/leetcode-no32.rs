@@ -1,7 +1,7 @@
 // problem: https://leetcode.cn/problems/longest-valid-parentheses/
 struct Solution;
 
-use utils::print_matrix;
+use utils::vec_helper::print_matrix;
 use std::cmp::max;
 impl Solution {
     pub fn longest_valid_parentheses(s: String) -> i32 {
