@@ -19,7 +19,6 @@ class Solution:
                 break
         return oneCnt + zeroCnt
 
-
 def main():
     test = Solution()
     print(test.longestSubsequence("1001010", 5))
