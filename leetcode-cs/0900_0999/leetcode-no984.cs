@@ -8,17 +8,16 @@ public class Solution {
     public string StrWithout3a3b(int a, int b) {
         string res = "";
         while (a > 0 && b > 0) {
-            res
-            
+            ;
         }
-        
+
+        return res;
     }
 }
 
 public class Test {
     public static void Run() {
         var s = new Solution();
-        
     }
 }
 
