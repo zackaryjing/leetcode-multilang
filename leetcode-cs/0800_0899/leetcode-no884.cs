@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 
 public class Solution {
+
     public string[] UncommonFromSentences(string s1, string s2) {
         var cnt = new Dictionary<string, int>();
         foreach (var word in s1.Split(' ')) {
@@ -26,6 +27,7 @@ public class Solution {
                 res.Add(kv.Key);
             }
         }
+
 
         return res.ToArray();
     }
