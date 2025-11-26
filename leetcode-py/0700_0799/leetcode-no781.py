@@ -38,7 +38,7 @@ class Solution3:
         del answers[:total]
         for i in answers:
             if i != current or times >= current + 1:
-                # print(i, current, times)
+                # print(il, current, times)
                 total += i + 1
                 times = 1
                 current = i
