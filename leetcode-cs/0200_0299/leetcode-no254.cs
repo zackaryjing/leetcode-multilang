@@ -18,7 +18,7 @@ class StructuralIntArrayComparer : IEqualityComparer<int[]> {
     }
 }
 
-public class Solution {
+public class Solution2 {
     // Terrible performance.
     bool isPrime(int n) {
         var limit = (int)Math.Sqrt(n) + 1;
@@ -83,6 +83,37 @@ public class Solution {
 
         sampleSet.Remove([n]);
         return sampleSet.Cast<IList<int>>().ToList();
+    }
+}
+
+public class Solution {
+    public IList<IList<int>> GetFactors(int n) {
+        var factorsList = new List<IList<int>>();
+        var temp = new List<int>();
+        GetFactors(n, 2, factorsList, temp);
+        return factorsList;
+    }
+
+    public void GetFactors(int num, int start, List<IList<int>> factorList, List<int> temp) {
+        int size = temp.Count;
+        if (num == 1) {
+            if (size > 1) {
+                factorList.Add(new List<int>(temp));
+            }
+        } else {
+            int sqrtNum = (int)Math.Sqrt(num);
+            for (int i = start; i <= sqrtNum; i++) {
+                if (num % i == 0) {
+                    temp.Add(i);
+                    GetFactors(num / i, i, factorList, temp);
+                    temp.RemoveAt(temp.Count - 1);
+                }
+            }
+
+            temp.Add(num);
+            GetFactors(1, num, factorList, temp);
+            temp.RemoveAt(temp.Count - 1);
+        }
     }
 }
 
