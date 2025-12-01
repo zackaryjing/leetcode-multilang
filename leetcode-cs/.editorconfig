@@ -5,7 +5,10 @@ end_of_line = lf
 # 括号位置风格
 csharp_new_line_before_open_brace = none
 csharp_new_line_before_else = false
+resharper_for_can_be_converted_to_foreach_highlighting = none
+
 
 # 缩进设置
 indent_style = space
 indent_size = 4
+
