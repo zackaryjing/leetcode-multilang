@@ -39,12 +39,9 @@ public class Solution {
     public int MinCost(int[][] costs) {
         int m = costs[0].Length, vpos = -1, vmn1 = 0, vmn2 = 0;
         var dp = costs[0];
-        // ReSharper disable once ForCanBeConvertedToForeach
         for (var i = 0; i < costs.Length; ++i) {
             var cost = costs[i];
-            var mn1 = int.MaxValue;
-            var mn2 = int.MaxValue;
-            var pos = -1;
+            int mn1 = int.MaxValue, mn2 = int.MaxValue, pos = -1;
             for (var j = 0; j < m; ++j) {
                 dp[j] = cost[j] + (j == vpos ? vmn2 : vmn1);
                 var temp = dp[j];
