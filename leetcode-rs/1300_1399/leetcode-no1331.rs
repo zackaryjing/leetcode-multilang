@@ -2,7 +2,7 @@
 struct Solution;
 
 impl Solution {
-    pub fn array_rank_transform2(mut arr: Vec<i32>) -> Vec<i32> {
+    pub fn array_rank_transform(mut arr: Vec<i32>) -> Vec<i32> {
         if arr.len() == 0 {
             return vec![];
         }
