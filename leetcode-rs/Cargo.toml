@@ -7,6 +7,11 @@ edition = "2024"
 utils = { path = "utils" }
 
 
+
+[[bin]]
+name = "leetcode-no1020"
+path = "1000_1099/leetcode-no1020.rs"
+
 [[bin]]
 name = "leetcode-no1004"
 path = "1000_1099/leetcode-no1004.rs"
