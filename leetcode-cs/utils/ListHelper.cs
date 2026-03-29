@@ -4,6 +4,29 @@ using System.Linq;
 using System.Text;
 
 namespace Utils {
+    public class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode(int val = 0, ListNode next = null) {
+            this.val = val;
+            this.next = next;
+        }
+
+        public static ListNode ListToNode(List<int> val) {
+            var root = new ListNode(val[0]);
+            var cur = root;
+            for (int i = 1; i < val.Count; ++i) {
+                var nxt = new ListNode(val[i]);
+                cur.next = nxt;
+                cur = cur.next;
+            }
+
+            return root;
+        }
+    }
+
+
     public static class ListHelper {
         public static void PrintIList(IList<IList<int>> matrix) {
             foreach (var row in matrix) {
