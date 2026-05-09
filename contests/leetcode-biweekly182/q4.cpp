@@ -66,7 +66,7 @@ public:
                     cost++;
                     for (int i = 0; i < hn; ++i) {
                         int cur = heavyQueue.front();
-                        if他 (cur == target) {
+                        if (cur == target) {
                             found = true;
                             break;
                         }

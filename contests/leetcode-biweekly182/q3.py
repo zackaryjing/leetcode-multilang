@@ -5,6 +5,7 @@ class Solution:
     def minGenerations(self, points: List[List[int]], target: List[int]) -> int:
         for point1 in points:
             for point2 in points:
+                pass
 
 
 def main():
