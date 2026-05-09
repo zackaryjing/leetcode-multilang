@@ -6,15 +6,6 @@
 
 using namespace std;
 
-template<typename T>
-void show_vector(vector<T> data) {
-    cout << "[";
-    for (auto k: data) {
-        cout << to_string(k) << " ";
-    }
-    cout << "]" << endl;
-}
-
 template<size_t T>
 void show_vector(vector<bitset<T>> data) {
     for (auto k: data) {
@@ -39,10 +30,36 @@ void show_vector(vector<string> data) {
 }
 
 template<typename T>
+void show_vector(vector<T> data, bool swap = true) {
+    cout << "[";
+    for (auto k: data) {
+        cout << to_string(k) << " ";
+    }
+    if (swap) {
+        cout << "]" << endl;
+    } else {
+        cout << "]";
+    }
+}
+
+
+template<typename T>
 void show_matrix(vector<vector<T>> data) {
     for (auto k: data) {
         for (auto h: k) {
             cout << to_string(h) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+template<typename T, typename F>
+void show_matrix(vector<vector<T>> &data, F render) {
+    for (const auto &row: data) {
+        for (const auto &item: row) {
+            cout << "\t";
+            render(item);
         }
         cout << endl;
     }
