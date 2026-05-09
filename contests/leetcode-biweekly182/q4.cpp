@@ -13,10 +13,10 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<pair<int, int>>> graph;
     int minimumThreshold(int n, vector<vector<int>> &edges, int source, int target, int k) {
         int left = 0, right = 0;
-        if (source == target) return 0;
+        if (source == target)
+            return 0;
         vector<vector<pair<int, int>>> graph(n);
         for (const auto edge: edges) {
             right = max(right, edge[2]);
@@ -32,7 +32,8 @@ public:
             vis[source] = true;
             int cost = 0;
             bool found = false;
-            while (not lightQueue.empty() || not heavyQueue.empty()) {
+            unordered_set<int> heavyQueueTemp;
+            while (not lightQueue.empty() || not heavyQueue.empty() || not heavyQueueTemp.empty()) {
                 while (not lightQueue.empty()) {
                     int cur = lightQueue.front();
                     if (cur == target) {
@@ -43,7 +44,7 @@ public:
                     for (const auto &[nx, wight]: graph[cur]) {
                         if (vis[nx] == false) {
                             if (wight > mid) {
-                                heavyQueue.push(nx);
+                                heavyQueueTemp.insert(nx);
                             } else {
                                 lightQueue.push(nx);
                                 vis[nx] = true;
@@ -53,23 +54,30 @@ public:
                 }
                 if (found)
                     break;
+                for (const auto hv: heavyQueueTemp) {
+                    if (not vis[hv]) {
+                        vis[hv] = true;
+                        heavyQueue.push(hv);
+                    }
+                }
                 int hn = heavyQueue.size();
+                heavyQueueTemp.clear();
                 if (hn > 0) {
                     cost++;
                     for (int i = 0; i < hn; ++i) {
                         int cur = heavyQueue.front();
-                        if (cur == target) {
+                        if他 (cur == target) {
                             found = true;
                             break;
                         }
                         heavyQueue.pop();
                         for (const auto &[nx, wight]: graph[cur]) {
                             if (vis[nx] == false) {
-                                vis[nx] = true;
                                 if (wight > mid) {
-                                    heavyQueue.push(nx);
+                                    heavyQueueTemp.insert(nx);
                                 } else {
                                     lightQueue.push(nx);
+                                    vis[nx] = true;
                                 }
                             }
                         }
@@ -90,7 +98,10 @@ public:
     }
 };
 
-int main(int argc, char *argv[]) { Solution test; }
+int main(int argc, char *argv[]) {
+    Solution test;
+    cout << test.minimumThreshold(3,temp_vector({temp_vector({0,1,79}),temp_vector({0,2,63})}),2,2,1) << endl;
+}
 
 //
 // Created By jing At 2026-05-09 23:25
