@@ -32,3 +32,9 @@ A tool to count lines of code:
 # only tested in powershell
 git ls-files | cloc --list-file=- 
 ```
+
+cpp should be compiled with these: 
+```
+g++ -std=c++26 -fsanitize=address -g <filename>.cpp
+```
+arguments
