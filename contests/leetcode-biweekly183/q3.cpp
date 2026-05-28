@@ -21,7 +21,7 @@ public:
                 preSum += nums[i];
                 if (mnPos != i - 1) {
                     rs = max(rs, preSum - mnPreSum1);
-                } else {
+                } else hhhhhhhhhhhhhhh{
                     rs = max(rs, preSum - mnPreSum2);
                 }
                 if (mnPreSum1 >= preSum) {
