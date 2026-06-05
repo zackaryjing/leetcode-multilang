@@ -47,7 +47,7 @@ public:
         return dummy->next;
     }
 };
-疼
+
 class Solution {
 public:
     ListNode *removeZeroSumSublists(ListNode *head) {
