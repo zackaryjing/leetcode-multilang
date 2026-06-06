@@ -3,6 +3,7 @@
 #include <iostream>
 #include <ranges>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include "../utils/vector_helper.h"
 
@@ -64,9 +65,9 @@ public:
 };
 
 
-class Solution {
+class Solution3 {
 public: // 980
-    // Seems to be correct but [TLE].
+    // Seems to be correct but [TLE]
     int maxScore(vector<int> &nums, int maxVal) {
         unordered_map<long long, bool> cache;
         const auto gcd = [](int a, int b) -> bool {
@@ -111,6 +112,128 @@ public: // 980
         }
         return res;
     }
+};
+
+
+class Solution {
+public:
+    int maxScore(vector<int> &nums, int maxVal) {
+        auto meratolvic = make_pair(nums, maxVal);
+
+        int n = nums.size();
+        int res = 0;
+
+        ranges::sort(nums);
+        ranges::reverse(nums);
+
+        if (n == 1)
+            return max(nums[0], maxVal - 1);
+
+        unordered_set occurs(nums.begin(), nums.end());
+        BadCounter counter(nums, maxVal);
+
+        for (int i = maxVal; i >= 1; --i) {
+
+            if (i <= res)
+                break;
+
+            bool hasSame = occurs.contains(i);
+
+            int cnts = counter.badCount(i);
+
+            if (i == 1) {
+                res = max(res, hasSame ? 1 : 0);
+            } else {
+                res = max(res, hasSame ? i - cnts + 1 : i - max(cnts, 1));
+            }
+        }
+
+        for (int i = 0; i < n; ++i) {
+            const int temp = nums[i];
+            if (temp > maxVal and temp > res) {
+                int cnts = counter.badCount(temp);
+                res = max(res, temp - cnts + 1);
+            } else {
+                break;
+            }
+        }
+
+        return res;
+    }
+
+private:
+    class BadCounter {
+        int maxNum;
+        vector<int> divCnt;
+        vector<int> spf;
+
+    public:
+        BadCounter(const vector<int>& nums, int maxVal) {
+            maxNum = maxVal;
+            for (int x : nums) maxNum = max(maxNum, x);
+
+            vector<int> freq(maxNum + 1);
+            for (int x : nums) freq[x]++;
+
+            divCnt.assign(maxNum + 1, 0);
+
+            for (int d = 1; d <= maxNum; ++d) {
+                for (int m = d; m <= maxNum; m += d) {
+                    divCnt[d] += freq[m];
+                }
+            }
+
+            spf.assign(maxNum + 1, 0);
+
+            for (int i = 2; i <= maxNum; ++i) {
+                if (spf[i] == 0) {
+                    for (int j = i; j <= maxNum; j += i) {
+                        if (spf[j] == 0) spf[j] = i;
+                    }
+                }
+            }
+        }
+
+        vector<int> primeFactors(int x) const {
+            vector<int> ps;
+
+            while (x > 1) {
+                int p = spf[x];
+                ps.push_back(p);
+                while (x % p == 0) x /= p;
+            }
+
+            return ps;
+        }
+
+        int badCount(int x) const {
+            if (x == 1) return 0;
+
+            auto ps = primeFactors(x);
+            int k = ps.size();
+            int res = 0;
+
+            for (int mask = 1; mask < (1 << k); ++mask) {
+                int prod = 1;
+                int bits = 0;
+
+                for (int i = 0; i < k; ++i) {
+                    if (mask >> i & 1) {
+                        prod *= ps[i];
+                        bits++;
+                    }
+                }
+
+                if (bits & 1) {
+                    res += divCnt[prod];
+                } else {
+                    res -= divCnt[prod];
+                }
+            }
+
+            return res;
+        他}
+    };
 };
 
 int main(int argc, char *argv[]) {
