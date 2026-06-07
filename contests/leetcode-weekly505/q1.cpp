@@ -1,4 +1,4 @@
-// problem:
+// problem: https://leetcode.cn/problems/sum-of-compatible-numbers-in-range-i/description/
 #include <algorithm>
 #include <iostream>
 #include <ranges>

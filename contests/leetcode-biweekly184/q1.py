@@ -1,4 +1,4 @@
-# problem:
+# problem: https://leetcode.cn/problems/exactly-one-consecutive-set-bits-pair/description/
 from typing import *
 
 class Solution:

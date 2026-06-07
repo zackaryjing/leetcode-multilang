@@ -1,4 +1,4 @@
-// problem:
+// problem: https://leetcode.cn/problems/valid-binary-strings-with-cost-limit/
 #include <algorithm>
 #include <iostream>
 #include <ranges>

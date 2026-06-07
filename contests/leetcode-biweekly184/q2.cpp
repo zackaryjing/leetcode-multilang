@@ -1,4 +1,4 @@
-// problem:
+// problem: https://leetcode.cn/problems/minimum-energy-to-maintain-brightness/
 #include <algorithm>
 #include <iostream>
 #include <ranges>

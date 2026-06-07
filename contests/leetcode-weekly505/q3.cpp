@@ -1,4 +1,4 @@
-// problem:
+// problem: https://leetcode.cn/problems/maximum-sum-of-m-non-overlapping-subarrays-i/
 #include <algorithm>
 #include <iostream>
 #include <ranges>
