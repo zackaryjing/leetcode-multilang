@@ -43,6 +43,16 @@ void show_vector(vector<T> data, bool swap = true) {
 }
 
 
+template<typename T, typename F>
+void show_vector(const vector<T> &data, F render) {
+    cout << "[";
+    for (const auto &item: data) {
+        render(item);
+        cout << " ";
+    }
+    cout << "]" << endl;
+}
+
 template<typename T>
 void show_matrix(vector<vector<T>> data) {
     for (auto k: data) {
